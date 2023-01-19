@@ -1,0 +1,27 @@
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    // Define a list of known threats
+    threats := []string{"virus", "malware", "ransomware"}
+
+    // Get input from the user
+    fmt.Print("Enter a string to scan for threats: ")
+    var input string
+    fmt.Scan(&input)
+
+    // Check if any of the known threats are present in the input
+    for _, threat := range threats {
+        if strings.Contains(input, threat) {
+            fmt.Println("Threat detected:", threat)
+            return
+        }
+    }
+
+    // If no threats were detected, print a message
+    fmt.Println("No threats detected.")
+}
